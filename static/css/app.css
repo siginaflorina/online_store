@@ -1,0 +1,299 @@
+* {
+    transition: all .2s linear;
+}
+
+html{
+    scroll-padding-top: 65px;
+    scroll-behavior: smooth;
+}
+
+body{
+    padding-top: 65px;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 10px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    box-shadow: var(--box-shadow);
+}
+
+nav .logo {
+    width: 25%;
+    font-size: 25px;
+    font-weight: bolder;
+    letter-spacing: .01em;
+}
+
+nav .logo a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+nav .logo i {
+    color: var(--green);
+}
+
+nav .navbar {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+nav .navbar li {
+    list-style-type: none;
+}
+
+nav .navbar li a{
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    padding: 5px 15px;
+}
+
+nav .navbar li a:hover{
+    cursor: pointer;
+    color: #fff;
+    background: var(--green);
+    transform: rotate(360deg);
+}
+
+nav .icons {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+nav .icons .icon-container{
+    position: relative;
+}
+
+nav .icons .icon-container a{
+    cursor: pointer;
+    height: 45px;
+    line-height: 45px;
+    width: 45px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+    text-decoration: none;
+}
+
+nav .icons .icon-container .tooltip{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 300px;
+    border-radius: 30px;
+    font-size: 15px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    top: 55px;
+    left: calc(-300px / 2 + 45px / 2);
+    box-shadow: var(--box-shadow);
+}
+
+nav .icons .tooltip.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+nav .icons .tooltip:before{
+    content: '';
+    border-bottom: 10px solid #eee;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+}
+
+nav .icons .icon-container .tooltip p{
+    margin: 0;
+}
+
+section {
+    padding: 20px 10%;
+}
+
+section:nth-child(even){
+    background-color: #eee;
+}
+
+section h1{
+    text-align: center;
+    color: var(--black);
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+section .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+section .card-container {
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 5px;
+    border: 0.1rem solid rgba(0,0,0,.2);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+section .card-container .image-container img {
+    height: 150px;
+}
+
+section .card-container .image-container .add-to-favorites-button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #eee;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    color: var(--black);
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
+    cursor: pointer;
+    border: 0;
+}
+
+section .card-container .image-container .add-to-favorites-button:hover{
+    background-color: var(--green);
+    color: #fff;
+}
+
+section .card-container .content-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+section .card-container .content-container h3{
+    color: var(--black);
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+section .card-container .content-container .rating-container i{
+    font-size: 16px;
+    color: var(--green);
+}
+
+section .card-container .bottom-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section .card-container .bottom-container span{
+    color: var(--green);
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+section .card-container .bottom-container .add-to-checkout-button {
+    display: inline-block;
+    font-size: 15px;
+    color: #fff;
+    background: var(--black);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 4px 30px;
+}
+
+section .link {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: normal;
+    color: #111;
+    display: block;
+    text-align: center;
+    padding: 30px 0 10px;
+    text-decoration: none;
+}
+
+section .link i{
+    margin-left: 5px;
+}
+
+section.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+section.footer .container {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 30px;
+}
+
+section.footer .container .links-container h3,
+section.footer .container .contact-container h3{
+    padding: 5px 0;
+    font-size: 25px;
+    color: var(--black);
+    margin: 0;
+}
+
+section.footer .container .links-container .links-group{
+    display: flex;
+}
+
+section.footer .container .links-container .links-group a{
+    display: block;
+    width: 50%;
+    padding: 5px 0;
+    font-size: 15px;
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+section.footer .container .contact-container p{
+    display: block;
+    width: 50%;
+    padding: 5px 0;
+    font-size: 15px;
+    color: var(--light-color);
+    margin: 0;
+}
+
+section.footer .credit{
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,.1);
+    font-size: 20px;
+    color: var(--black);
+    padding: 15px 5px 5px;
+}
+
+section.footer .credit span{
+    color: var(--green);
+}

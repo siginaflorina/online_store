@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Autentificare</title>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+</head>
+<body>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <script type=text/javascript>
+                    const type = "{{ message.tags }}";
+                    if(type === 'success')
+                        toastr.success("{{ message }}");
+                    if(type === 'info')
+                        toastr.info("{{ message }}");
+                    if(type === 'warning')
+                        toastr.warning("{{ message }}");
+                    if(type === 'error')
+                        toastr.error("{{ message }}");
+                </script>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="container">
+        <form method="POST">
+            {# Ca atacatorii sa nu puna mana pe datele trimise din cadrul formularului catre backend #}
+            {% csrf_token %}
+            <h2>Autentificare</h2>
+            <div class="form-field">
+                <label for="{{ form.email.name }}">
+                    {{ form.email.label }}
+                </label>
+                {{ form.email }}
+            </div>
+            <div class="form-field">
+                <label for="{{ form.password.name }}">
+                    {{ form.password.label }}
+                </label>
+                {{ form.password }}
+            </div>
+            <div class="form-submit-button">
+                <input type="submit" value="Autentificare">
+            </div>
+            <div class="form-bottom">
+                <hr/>
+                    <a href="/register">Nu ai cont?</a>
+                <hr/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

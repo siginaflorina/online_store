@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inregistrare</title>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            {# Ca atacatorii sa nu puna mana pe datele trimise din cadrul formularului catre backend #}
+            {% csrf_token %}
+            <h2>Inregistrare</h2>
+            <div class="form-field">
+                <label for="{{ form.email.name }}">
+                    {{ form.email.label }}
+                </label>
+                {{ form.email }}
+            </div>
+            <div class="form-field">
+                <label for="{{ form.password.name }}">
+                    {{ form.password.label }}
+                </label>
+                {{ form.password }}
+            </div>
+            <div class="form-field">
+                <label for="{{ form.confirm_password.name }}">
+                    {{ form.confirm_password.label }}
+                </label>
+                {{ form.confirm_password }}
+            </div>
+            <div class="form-submit-button">
+                <input type="submit" value="Inregistrare">
+            </div>
+            <div class="form-bottom">
+                <hr/>
+                    <a href="/login">Ai deja cont?</a>
+                <hr/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
