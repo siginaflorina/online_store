@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # creare template index.html, mers in aplicatia noastra, exemplu aici "app" in fisierul views.py, facut legatura cu
     # fisierul index.html mai inainte creat, si dupa venim aici si facem import-ul mai sus, from app.views import home
-    path('', include('app.urls'))
+    path('', include('app.urls')),
+    path('account', include('accounts.urls'))
 ]

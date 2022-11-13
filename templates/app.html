@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="icon-container">
-            <a href="" class="fas fa-user icon"></a>
+            <a href="{% url 'signup' %}" class="fas fa-user icon"></a>
             <div class="tooltip">
                 <p>
                     Sectiunea detalii cont
@@ -270,7 +270,7 @@
 </section>
 <section class="contact" id="contact">
     <h1>Contact</h1>
-    <form id="contact_form" action="{% url '' %}" method="POST" enctype="multipart/form-data">
+    <form id="contact_form" action="{% url 'homepage' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row">
             <label class="required" for="name">Your name:</label><br/>
