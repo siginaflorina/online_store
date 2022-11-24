@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Acasa</title>
+{% endblock %}
+{% block css_imports %}
+    <link href="../static/css/index.css" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block body_content %}
+    <div class="container">
+        <div class="mask">
+            <div class="inner-container">
+                <h2>
+                    OnlineStore
+                </h2>
+                <hr>
+                <h4>
+                    Comanzi rapid si usor
+                </h4>
+                <div class="container-buttons">
+                    <div class="btn-group">
+                        <a href="/register">
+                            Înregistrare<i class="fa fa-user"></i>
+                        </a>
+                        <a href="/login">
+                            Autentificare<i class="fa fa-sign-in-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

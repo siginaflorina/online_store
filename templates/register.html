@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Inregistrare</title>
+{% endblock %}
+{% block css_imports %}
+    <link rel="stylesheet" href="../static/css/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+{% endblock %}
+{% block head_js_imports %}
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+{% endblock %}
+{% block body_content %}
+    {% include "toastr.html" %}
+    <div class="container">
+        <div class="mask">
+            <div class="inner-container">
+                <form method="POST">
+                    {# Ca atacatorii sa nu puna mana pe datele trimise din cadrul formularului catre backend #}
+                    {% csrf_token %}
+                    <h2>Inregistrare</h2>
+                    <div class="form-field">
+                        <label for="{{ register_form.email.name }}">
+                            {{ register_form.email.label }}
+                        </label>
+                        {{ register_form.email }}
+                    </div>
+                    <div class="form-field">
+                        <label for="{{ register_form.password.name }}">
+                            {{ register_form.password.label }}
+                        </label>
+                        {{ register_form.password }}
+                    </div>
+                    <div class="form-field">
+                        <label for="{{ register_form.confirm_password.name }}">
+                            {{ register_form.confirm_password.label }}
+                        </label>
+                        {{ register_form.confirm_password }}
+                    </div>
+                    <div class="form-submit-button">
+                        <input type="submit" value="Inregistrare">
+                    </div>
+                    <div class="form-bottom">
+                        <hr/>
+                            <a href="/login">Ai deja cont?</a>
+                        <hr/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

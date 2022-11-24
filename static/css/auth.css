@@ -1,0 +1,74 @@
+.container {
+    height: 100vh;
+    background: url("/static/images/background-image.jpeg") no-repeat fixed center center;
+    background-size: cover;
+}
+
+.mask{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+form{
+    border: 1px solid lightgray;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px 30px;
+    color: #fff;
+}
+
+.form-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.form-field input{
+    padding: 5px 5px;
+}
+
+.form-submit-button{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.form-submit-button input{
+    padding: 10px 15px;
+    border: 0;
+    background: lightseagreen;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-bottom{
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-bottom hr{
+    border-bottom: 1px solid lightgray;
+    width: 125px;
+    height: 0;
+}
+
+.form-bottom a{
+    display: block;
+    padding: 0 15px;
+    text-decoration: none;
+    color: lightseagreen;
+}

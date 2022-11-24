@@ -1,0 +1,17 @@
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <script type=text/javascript>
+                const type = "{{ message.tags }}";
+                if(type === 'success')
+                    toastr.success("{{ message }}");
+                if(type === 'info')
+                    toastr.info("{{ message }}");
+                if(type === 'warning')
+                    toastr.warning("{{ message }}");
+                if(type === 'error')
+                    toastr.error("{{ message }}");
+            </script>
+        {% endfor %}
+    </ul>
+{% endif %}

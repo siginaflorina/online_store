@@ -1,0 +1,75 @@
+<div class="user-details-modal" id="user-details-modal">
+    <div class="modal-container">
+        <div class="close-button-container">
+            <span class="close-button">×</span>
+        </div>
+        <div class="tabs-container">
+            <button class="show-details-form-button active">Schimbare detalii</button>
+            <button class="show-password-form-button">Schimbare parola</button>
+        </div>
+        <div class="form-wrapper">
+            <form class="change-details-form" action="/auth/change-user-details" method="POST">
+                {% csrf_token %}
+                <h2>Schimbare detalii cont</h2>
+                <div class="form-field">
+                    <label for="{{ user_details_form.last_name.name }}">
+                        {{ user_details_form.last_name.label }}
+                    </label>
+                    {{ user_details_form.last_name }}
+                </div>
+                <div class="form-field">
+                    <label for="{{ user_details_form.first_name.name }}">
+                        {{ user_details_form.first_name.label }}
+                    </label>
+                    {{ user_details_form.first_name }}
+                </div>
+                <div class="form-field">
+                    <label for="{{ user_details_form.city.name }}">
+                        {{ user_details_form.city.label }}
+                    </label>
+                    {{ user_details_form.city }}
+                </div>
+                <div class="form-field">
+                    <label for="{{ user_details_form.address.name }}">
+                        {{ user_details_form.address.label }}
+                    </label>
+                    {{ user_details_form.address }}
+                </div>
+                <div class="form-field">
+                    <label for="{{ user_details_form.preferred_communication_channel.name }}">
+                        {{ user_details_form.preferred_communication_channel.label }}
+                    </label>
+                    {{ user_details_form.preferred_communication_channel }}
+                </div>
+                <div class="submit-button-wrapper">
+                    <input type="submit" value="Salveaza modificarile">
+                </div>
+            </form>
+            <form class="change-password-form" action="/auth/change-user-password" method="POST">
+                {% csrf_token %}
+                <h2>Schimbare parola cont</h2>
+                <div class="form-field">
+                    <label for="{{ user_password_form.old_password.name }}">
+                        {{ user_password_form.old_password.label }}
+                    </label>
+                    {{ user_password_form.old_password }}
+
+                    <div class="form-field">
+                    <label for="{{ user_password_form.new_password.name }}">
+                        {{ user_password_form.new_password.label }}
+                    </label>
+                    {{ user_password_form.new_password }}
+                </div>
+                    <div class="form-field">
+                    <label for="{{ user_password_form.confirm_password.name }}">
+                        {{ user_password_form.confirm_password.label }}
+                    </label>
+                    {{ user_password_form.confirm_password }}
+                </div>
+                <div class="submit-button-wrapper">
+                    <input type="submit" value="Schimba parola">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load template_tags %}
+{% block css_imports %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/shopping-cart-modal.css">
+    <link rel="stylesheet" href="/static/css/user-details-modal.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    <link rel="stylesheet" href="/static/css/app.css">
+{% endblock %}
+{% block body_content %}
+    {% include "navbar.html" %}
+    {% block app_body_content %}{% endblock %}
+    {% include "footer.html" %}
+    {% include "shopping-cart-modal.html" %}
+    {% include "user-details-modal.html" %}
+{% endblock %}
+{% block body_js_imports %}
+    <script src="/static/js/navbar.js"></script>
+    <script src="/static/js/shopping-cart-modal.js"></script>
+    <script src="/static/js/user-details-modal.js"></script>
+    {% block app_body_js_imports %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,258 @@
+.shopping-cart-modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    align-items: center;
+}
+
+.shopping-cart-modal .modal-container{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0 30px 20px;
+    border: 1px solid #888;
+    width: 800px;
+    border-radius: 15px;
+}
+
+.shopping-cart-modal .modal-container .close-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shopping-cart-modal .modal-container .close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: -15px;
+    cursor: pointer;
+}
+
+.shopping-cart-modal .modal-container .top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-cart-modal .modal-container .top-container span:first-child {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.shopping-cart-modal .modal-container .top-container button {
+    font-size: 14px;
+    color: red;
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+}
+
+.shopping-cart-modal .modal-container .middle-container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0 15px;
+}
+
+.shopping-cart-modal .modal-container .middle-container .no-products-text{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-image img {
+    height: 100%;
+    width: 100px;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-details {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-details .product-name {
+    font-size: 18px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-details .product-rating{
+    color: var(--green);
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-quantity {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-quantity .add-quantity-button,
+.shopping-cart-modal .modal-container .middle-container .product-container .product-quantity .remove-quantity-button
+{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    cursor: pointer;
+    border: 0;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-quantity .quantity {
+    width: 30px;
+    text-align: center;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-price {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-price span:first-child {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: end;
+}
+
+.shopping-cart-modal .modal-container .middle-container .product-container .product-price span:last-child {
+    text-align: end;
+    cursor: pointer;
+    color: red;
+    font-size: 14px;
+}
+
+.shopping-cart-modal .modal-container .hr-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.shopping-cart-modal .modal-container .hr-container hr {
+    width: 100%;
+    border-top: 2px solid lightgray;
+}
+
+.shopping-cart-modal .modal-container .bottom-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shopping-cart-modal .modal-container .bottom-container .bottom-inner-container {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.shopping-cart-modal .modal-container .bottom-container .bottom-inner-container .checkout-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shopping-cart-modal .modal-container .bottom-container .bottom-inner-container .checkout-details .total-items{
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping-cart-modal .modal-container .bottom-container .bottom-inner-container .checkout-details .total-items span:first-child {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.shopping-cart-modal .modal-container .bottom-container .bottom-inner-container .checkout-details .total-items span:last-child{
+    font-size: 11px;
+}
+
+.shopping-cart-modal .modal-container .bottom-container .bottom-inner-container .checkout-details .total-price {
+    font-size: 20px;
+    font-weight: 700;
+    width: 120px;
+    text-align: end;
+}
+
+.shopping-cart-modal .modal-container .bottom-container .bottom-inner-container .confirm-button {
+    width: 100%;
+    border-radius: 15px;
+    padding: 5px 0;
+    background: var(--green);
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+}
+
+.shopping-cart-modal .modal-container .next-container {
+    display: none;
+    margin-top: 10px;
+}
+
+.shopping-cart-modal .modal-container .next-container form{
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping-cart-modal .modal-container .next-container form .checkbox-address-wrapper {
+    display: flex;
+    gap: 5px;
+}
+
+.shopping-cart-modal .modal-container .next-container form .checkbox-address-wrapper label{
+    padding: 0;
+}
+
+.shopping-cart-modal .modal-container .next-container form .checkbox-address-wrapper input{
+    margin: 0;
+}
+
+.shopping-cart-modal .modal-container .next-container form .form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping-cart-modal .modal-container .next-container form label{
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.shopping-cart-modal .modal-container .next-container form textarea{
+    border: 1px solid lightgray;
+    resize: vertical;
+    padding: 10px;
+}
+
+.shopping-cart-modal .modal-container .next-container form .submit-button-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shopping-cart-modal .modal-container .next-container form .submit-button-wrapper button{
+    width: 180px;
+    border-radius: 15px;
+    padding: 5px 0;
+    margin-top: 10px;
+    background: var(--green);
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+}

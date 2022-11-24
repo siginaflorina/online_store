@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        {% block title %}
+            <title>OnlineStore</title>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico"/>
+        <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-sans">
+        <link rel="stylesheet" href="/static/css/base.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+        {% block css_imports %}{% endblock %}
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+        {% block head_js_imports %}{% endblock %}
+    </head>
+    <body>
+        {% block body_content %}{% endblock %}
+        {% block body_js_imports %}{% endblock %}
+    </body>
+</html>

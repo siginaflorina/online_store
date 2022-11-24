@@ -1,0 +1,36 @@
+{% extends "base-app.html" %}
+{% load template_tags %}
+{% block app_body_content %}
+    <section>
+        <h1>{{category}}</h1>
+        <div class="cards-container">
+            {% for product in products %}
+                <div class="card-container" data-id="{{product.id}}">
+                    <div class="image-container">
+                        <img src="/static/images/products/{{ product.category }}/{{ product.image }}" alt="">
+                        <button class="fas fa-heart add-to-favorites-button"></button>
+                    </div>
+                    <div class="content-container">
+                        <h3>{{ product.title }}</h3>
+                        <div class="rating-container">
+                                {% for i in product.range_nr_stars_full %}
+                                    <i class="fas fa-star"></i>
+                                {% endfor %}
+                                {% for i in product.range_nr_stars_empty %}
+                                    <i class="far fa-star"></i>
+                                {% endfor %}
+                        </div>
+                        <div class="bottom-container">
+                            {% with product.price|split:"." as prices_splitted %}
+                                <span>{{ prices_splitted.0 }}<sup>{{ prices_splitted.1 }}</sup> Lei</span>
+                            {% endwith %}
+                            <button class="add-to-checkout-button">
+                                Adauga
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

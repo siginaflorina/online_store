@@ -1,0 +1,124 @@
+{% extends "base-app.html" %}
+{% load template_tags %}
+{% block app_body_content %}
+    {% include "toastr.html" %}
+    <section class="home" id="home">
+        <h1>Home</h1>
+        <img src="https://wallpaperaccess.com/full/3172454.jpg" alt="" width="100%" height="500xp">
+    </section>
+    </div>
+    </section>
+    <section class="apa" id="apa">
+        <h1>Products</h1>
+        <div class="cards-container">
+            {% for product in products_category_apa %}
+                <div class="card-container" data-id="{{ product.id }}">
+                    <div class="image-container">
+                        <img src="/static/images/products/{{ product.category }}/{{ product.image }}" alt="">
+                        <button class="fas fa-heart add-to-favorites-button"></button>
+                    </div>
+                    <div class="content-container">
+                        <h3>{{ product.title }}</h3>
+                        <div class="rating-container">
+                            {% for i in product.range_nr_stars_full %}
+                                <i class="fas fa-star"></i>
+                            {% endfor %}
+                            {% for i in product.range_nr_stars_empty %}
+                                <i class="far fa-star"></i>
+                            {% endfor %}
+                        </div>
+                        <div class="bottom-container">
+                            {% with product.price|split:"." as prices_splitted %}
+                                <span>{{ prices_splitted.0 }}<sup>{{ prices_splitted.1 }}</sup> Lei</span>
+                            {% endwith %}
+                            <button class="add-to-checkout-button">
+                                Adauga
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="link" href="/app/categories/apa">
+            VEZI TOATE PRODUSELE
+            <i class="fa-solid fa-angle-right"></i>
+        </a>
+    </section>
+    <section class="servicii" id="servicii">
+        <h1>Services</h1>
+        <div class="cards-container">
+            {% for product in products_category_servicii %}
+                <div class="card-container" data-id="{{ product.id }}">
+                    <div class="image-container">
+                        <img src="/static/images/products/{{ product.category }}/{{ product.image }}" alt="">
+                        <button class="fas fa-heart add-to-favorites-button"></button>
+                    </div>
+                    <div class="content-container">
+                        <h3>{{ product.title }}</h3>
+                        <div class="rating-container">
+                            {% for i in product.range_nr_stars_full %}
+                                <i class="fas fa-star"></i>
+                            {% endfor %}
+                            {% for i in product.range_nr_stars_empty %}
+                                <i class="far fa-star"></i>
+                            {% endfor %}
+                        </div>
+                        <div class="bottom-container">
+                            {% with product.price|split:"." as prices_splitted %}
+                                <span>{{ prices_splitted.0 }}<sup>{{ prices_splitted.1 }}</sup> Lei</span>
+                            {% endwith %}
+                            <button class="add-to-checkout-button">
+                                Adauga
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="link" href="/app/categories/servicii">
+            VEZI TOATE PRODUSELE
+            <i class="fa-solid fa-angle-right"></i>
+        </a>
+    </section>
+    <section class="about-us" id="about-us">
+        <h1>About Us</h1>
+    <section class="about-us" id="about-us">
+    <div class="container-fluid">
+        <div class="row">
+            <p style="color:black;">Fresh Water is an entirely domestic, privately held company, established in 1998,
+                with a turnover of 170 million euro. Throughout its more than 23 years of activity, significant
+                investments have been made, totalling over 250 million euro, particularly in global state-of-the-art
+                technologies and equipment, with a view to obtaining products which meet the highest quality standards.
+            </p>
+        </div>
+    </div>
+</section>
+    </section>
+    <section class="contact" id="contact">
+        <h1>Contact</h1>
+        <div class="cards-container">
+            <form id="contact_form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <label class="required" for="name">Your name:</label><br/>
+                    <input id="name" class="input" name="name" type="text" value="" size="30"/><br/>
+                    <span id="name_validation" class="error_message"></span>
+                </div>
+                <div class="row">
+                    <label class="required" for="email">Your email:</label><br/>
+                    <input id="email" class="input" name="email" type="text" value="" size="30"/><br/>
+                    <span id="email_validation" class="error_message"></span>
+                </div>
+                <div class="row">
+                    <label class="required" for="message">Your message:</label><br/>
+                    <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br/>
+                    <span id="message_validation" class="error_message"></span>
+                </div>
+                <input id="submit_button" type="submit" value="Send email"/>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+{% block app_body_js_imports %}
+    <script src="/static/js/app.js"></script>
+{% endblock %}

@@ -1,0 +1,116 @@
+.user-details-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    align-items: center;
+}
+
+.user-details-modal .modal-container{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0 0 30px;
+    border: 1px solid #888;
+    width: 800px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.user-details-modal .modal-container .close-button-container {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    right: 30px;
+    top: 0;
+}
+
+.user-details-modal .modal-container .close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: -15px;
+    cursor: pointer;
+}
+
+.user-details-modal .modal-container .tabs-container{
+    display: flex;
+}
+
+.user-details-modal .modal-container .tabs-container button{
+    width: 50%;
+    background: none;
+    border: none;
+    padding: 15px 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.user-details-modal .modal-container .tabs-container button.active{
+    color: var(--green);
+}
+
+.user-details-modal .modal-container .tabs-container button:hover{
+    cursor: pointer;
+    color: var(--green);
+}
+
+.user-details-modal .modal-container .form-wrapper{
+    padding: 0 30px;
+}
+
+.user-details-modal .modal-container .form-wrapper form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-details-modal .modal-container .form-wrapper form h2{
+    text-align: center;
+}
+
+.user-details-modal .modal-container .form-wrapper form .form-field{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-details-modal .modal-container .form-wrapper form .form-field label{
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.user-details-modal .modal-container .form-wrapper form .form-field input,
+.user-details-modal .modal-container .form-wrapper form .form-field select {
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+
+.user-details-modal .modal-container .form-wrapper form .form-field textarea {
+    border: 1px solid lightgray;
+    resize: vertical;
+    padding: 10px;
+}
+
+.user-details-modal .modal-container .form-wrapper form .submit-button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.user-details-modal .modal-container .form-wrapper form .submit-button-wrapper input{
+    border-radius: 4px;
+    padding: 10px;
+    background: var(--green);
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+}
+
+.user-details-modal .modal-container .form-wrapper .change-password-form{
+    display: none;
+}

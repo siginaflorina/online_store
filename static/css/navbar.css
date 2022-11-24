@@ -1,0 +1,130 @@
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 10px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    box-shadow: var(--box-shadow);
+}
+
+nav .logo {
+    width: 25%;
+    font-size: 25px;
+    font-weight: bolder;
+    letter-spacing: .01em;
+}
+
+nav .logo a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+nav .logo i {
+    color: var(--green);
+}
+
+nav .navbar {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+nav .navbar li {
+    list-style-type: none;
+}
+
+nav .navbar li a{
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    padding: 5px 15px;
+}
+
+nav .navbar li a:hover{
+    cursor: pointer;
+    color: #fff;
+    background: var(--green);
+    transform: rotate(360deg);
+}
+
+nav .icons {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+nav .icons .icon-container{
+    position: relative;
+}
+
+nav .icons .icon-container a{
+    cursor: pointer;
+    height: 45px;
+    line-height: 45px;
+    width: 45px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+    text-decoration: none;
+}
+
+nav .icons .icon-container .number{
+    position: absolute;
+    right: -3px;
+    top: -5px;
+    color: #fff;
+    background-color: var(--green);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+nav .icons .icon-container .tooltip{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 300px;
+    border-radius: 30px;
+    font-size: 15px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    top: 55px;
+    left: calc(-300px / 2 + 45px / 2);
+    box-shadow: var(--box-shadow);
+}
+
+nav .icons .tooltip.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+nav .icons .tooltip:before{
+    content: '';
+    border-bottom: 10px solid #eee;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+}
+
+nav .icons .icon-container .tooltip p{
+    margin: 0;
+}
